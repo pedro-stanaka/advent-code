@@ -13,7 +13,22 @@ defmodule AdventCode.DayOne do
     floor(module_mass / 3) - 2
   end
 
-  defp read_file(filename) do
-    File.stream!(filename)
+  @spec calculate_total_fuel(String.t()) :: integer
+  def calculate_total_fuel(filename) do
+    filename
+    |> File.stream!()
+    |> Stream.map(&parse_line/1)
+    |> Enum.map(&fuel_ammount/1)
+    |> Enum.sum()
+  end
+
+  defp parse_line(line) do
+    case Integer.parse(line) do
+      :error ->
+        raise "Error while reading line. Bad value: #{line}"
+
+      {integer, _rest} ->
+        integer
+    end
   end
 end
