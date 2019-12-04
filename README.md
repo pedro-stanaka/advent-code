@@ -1,21 +1,12 @@
-# AdventCode
+# Advent of Code 2019
 
-**TODO: Add description**
+Solution for the daily problems made available on [Advent Of Code
+2019](https://adventofcode.com/2019).
 
-## Installation
+## Running tests
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `advent_code` to your list of dependencies in `mix.exs`:
+As most mix projects just run:
 
-```elixir
-def deps do
-  [
-    {:advent_code, "~> 0.1.0"}
-  ]
-end
+```bash
+mix test
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/advent_code](https://hexdocs.pm/advent_code).
-
