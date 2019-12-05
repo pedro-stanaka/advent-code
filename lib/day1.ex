@@ -1,4 +1,8 @@
 defmodule AdventCode.DayOne do
+  @moduledoc """
+  Solution for first part of Day 1 challenge
+  """
+
   @doc """
   Calculates the required amount of fuel to launch a
   Saint Nikolaus Spacecraft.

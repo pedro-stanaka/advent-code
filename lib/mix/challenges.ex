@@ -45,7 +45,7 @@ defmodule Mix.Tasks.Challenges do
     print_challenge_names()
   end
 
-  defp print_challenge_names() do
+  defp print_challenge_names do
     Mix.shell().info("\nList of available challenges:")
 
     @challenge_module_mapping
