@@ -3,10 +3,11 @@ defmodule AdventCode.DayOneTest do
   doctest AdventCode.DayOne
   alias AdventCode.DayOne
 
-  describe "AdventCode.DayOne.fuel_ammount/1" do
+  describe "AdventCode.DayOne.fuel_ammount/3" do
     @expected_fuel [
       {12, 2},
       {14, 2},
+      {90, 28},
       {1969, 654},
       {100_756, 33_583}
     ]
