@@ -2,6 +2,7 @@ defmodule AdventCode.DayOne do
   @moduledoc """
   Solution for first part of Day 1 challenge
   """
+  alias AdventCode.Io.FileReader
 
   @doc """
   Calculates the required amount of fuel to launch a
@@ -14,25 +15,14 @@ defmodule AdventCode.DayOne do
   """
   @spec fuel_ammount(integer) :: integer
   def fuel_ammount(module_mass) do
-    floor(module_mass / 3) - 2
+    case floor(module_mass / 3) - 2 do
+      x when x > 0 -> x
+      _ -> 0
+    end
   end
 
   @spec calculate_total_fuel(String.t()) :: integer
   def calculate_total_fuel(filename) do
-    filename
-    |> File.stream!()
-    |> Stream.map(&parse_line/1)
-    |> Enum.map(&fuel_ammount/1)
-    |> Enum.sum()
-  end
-
-  defp parse_line(line) do
-    case Integer.parse(line) do
-      :error ->
-        raise "Error while reading line. Bad value: #{line}"
-
-      {integer, _rest} ->
-        integer
-    end
+    FileReader.iterate_file_and_sum(filename, &fuel_ammount/1)
   end
 end
