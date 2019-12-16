@@ -12,16 +12,12 @@ defmodule AdventCode.Io.FileReader do
   def iterate_file_and_sum(filename, callback) do
     filename
     |> File.stream!()
-    |> Stream.map(&parse_line/1)
+    |> Stream.map(&parse_int/1)
     |> Stream.map(fn x -> callback.(x) end)
     |> Enum.sum()
   end
 
-  @doc """
-  Reads a integer from a line, removing any special char at the end (e.g.
-  carriage returns).
-  """
-  defp parse_line(line) do
+  def parse_int(line) do
     case Integer.parse(line) do
       :error ->
         raise "Error while reading line. Bad value: #{line}"

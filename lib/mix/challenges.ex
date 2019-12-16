@@ -3,7 +3,8 @@ defmodule Mix.Tasks.Challenges do
 
   @challenge_module_mapping %{
     day1: &AdventCode.DayOne.calculate_total_fuel/1,
-    day1_pt2: &AdventCode.DayOnePartTwo.calculate_total_from_file/1
+    day1_pt2: &AdventCode.DayOnePartTwo.calculate_total_from_file/1,
+    day2: &AdventCode.DayTwo.solve/1
   }
 
   @impl Mix.Task
